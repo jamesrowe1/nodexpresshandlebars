@@ -26,13 +26,13 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
+  var condition = req.params.id;
 
   console.log("condition", condition);
 
   burger.update(
     {
-      sleepy: req.body.sleepy,
+      devoured: req.body.devoured,
     },
     condition,
     function (result) {
