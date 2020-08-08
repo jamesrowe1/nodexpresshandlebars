@@ -4,7 +4,18 @@
 	<button class="change-devour" data-id="{{id}}" data-newdevoured="{{devoured}}">
 		DEVOUR!
 	</button>
+	<button class="delete-burger" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		I don't want to eat this.
+	</button>
 	{{/unless}}
+	{{#if devoured}}
+	<button class="change-devour" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		I don't feel so good...
+	</button>
+	<button class="delete-burger" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		I never ate this.
+	</button>
+	{{/if}}
 
 	{{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
 </li>
