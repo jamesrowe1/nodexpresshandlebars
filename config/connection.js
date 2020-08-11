@@ -2,6 +2,7 @@
 var mysql = require("mysql");
 
 //connection info given by heroku jawsdb
+//on local machine use .env file, on heroku use config vars
 var connection = mysql.createConnection({
   host: process.env.HOST,
   port: process.env.DB_PORT,
