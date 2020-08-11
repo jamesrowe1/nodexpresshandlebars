@@ -15,6 +15,7 @@ router.get("/", function (req, res) {
   });
 });
 
+//post route (something added to db)
 router.post("/api/burgers", function (req, res) {
   burger.create(
     ["burger_name", "devoured"],
@@ -26,11 +27,13 @@ router.post("/api/burgers", function (req, res) {
   );
 });
 
+//put route (something in db is changed)
 router.put("/api/burgers/:id", function (req, res) {
   var condition = req.params.id;
 
   console.log("condition", condition);
 
+  //call burger.update
   burger.update(
     {
       devoured: req.body.devoured,
@@ -47,9 +50,11 @@ router.put("/api/burgers/:id", function (req, res) {
   );
 });
 
+//delete something from db
 router.delete("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
+  //call delete orm method
   burger.delete(condition, function (result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

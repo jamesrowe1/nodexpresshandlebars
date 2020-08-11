@@ -1,5 +1,6 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
+  //on the change devour button (either "devour" or "I don't feel so good")
   $(".change-devour").on("click", function (event) {
     var id = $(this).data("id");
     var newDevoured = $(this).data("newdevoured");
@@ -19,6 +20,7 @@ $(function () {
     });
   });
 
+  //on the create form submission
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -39,6 +41,7 @@ $(function () {
     });
   });
 
+  //on the delete button click ("I don't want to eat this" or "I never ate this")
   $(".delete-burger").on("click", function (event) {
     var id = $(this).data("id");
 

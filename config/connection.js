@@ -1,12 +1,13 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
+//connection info given by heroku jawsdb
 var connection = mysql.createConnection({
-  host: "rnr56s6e2uk326pj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  port: 3306,
-  user: "v36fhfhc1t5f3h9b",
-  password: "xugfgocz8zy2blrz",
-  database: "bsq769gerd65b421",
+  host: process.env.HOST,
+  port: process.env.PORT,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
 // Make connection.

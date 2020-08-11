@@ -40,6 +40,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
+  //query to select all
   all: function (tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
@@ -49,6 +50,7 @@ var orm = {
       cb(result);
     });
   },
+  //query to insert a new item into table
   create: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -69,6 +71,7 @@ var orm = {
       cb(result);
     });
   },
+  //method to change something already in the table
   update: function (table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
@@ -86,6 +89,7 @@ var orm = {
       cb(result);
     });
   },
+  //delete something from the table
   delete: function (table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
